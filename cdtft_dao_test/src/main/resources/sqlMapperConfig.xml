@@ -1,0 +1,12 @@
+<configuration>
+    <dataSource>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="url">jdbc:</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+    </dataSource>
+
+    <mappers>
+        <mapper resource=""></mapper>
+    </mappers>
+</configuration>
