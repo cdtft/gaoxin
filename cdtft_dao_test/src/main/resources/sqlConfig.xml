@@ -1,12 +1,11 @@
 <configuration>
     <dataSource>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="url">jdbc:</property>
+        <property name="url">jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;serverTimezone=GMT%2B8</property>
         <property name="user">root</property>
         <property name="password">root</property>
     </dataSource>
-
-    <mappers>
-        <mapper resource=""></mapper>
-    </mappers>
+    <slqConfig>
+        <sqls resource="userSql.xml"></sqls>
+    </slqConfig>
 </configuration>
