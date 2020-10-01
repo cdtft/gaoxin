@@ -33,7 +33,7 @@ public class XMLConfigurerBuilder {
         Properties properties = new Properties();
         for (Element e : dataSourceElement) {
             String name = e.attributeValue("name");
-            String value = e.attributeValue("value");
+            String value = e.getTextTrim();
             properties.setProperty(name, value);
         }
         ComboPooledDataSource dataSource = new ComboPooledDataSource();

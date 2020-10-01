@@ -34,7 +34,7 @@ public class SimpleCdtftSqlExecutor implements CdtftSqlExecutor {
         String executeSql = bindingSql.getExecuteSql();
         Class<?> parameterType = sqlStatement.getParameterType();
         PreparedStatement preparedStatement = connection.prepareStatement(executeSql);
-        for (int i = 0; i < bindingSql.getParameterList().size() ; i++) {
+        for (int i = 0; i < bindingSql.getParameterList().size(); i++) {
             String parameterFiledName = bindingSql.getParameterList().get(i);
             Field declaredField = parameterType.getDeclaredField(parameterFiledName);
             declaredField.setAccessible(true);
@@ -52,12 +52,15 @@ public class SimpleCdtftSqlExecutor implements CdtftSqlExecutor {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             //遍历每一列
-            for (int i = 0; i < columnCount; i++) {
+            for (int i = 1; i < columnCount + 1; i++) {
                 String columnName = metaData.getColumnName(i);
+                Field declaredField = resultClass.getDeclaredField(columnName);
                 Object columnValue = resultSet.getObject(columnName);
                 PropertyDescriptor propertyDescriptor = new PropertyDescriptor(columnName, resultClass);
                 Method writeMethod = propertyDescriptor.getWriteMethod();
-                writeMethod.invoke(t, columnValue);
+                writeMethod.invoke(t, declaredField.getType().cast(columnValue));
+//                declaredField.setAccessible(true);
+//                declaredField.set(t, columnValue);
             }
             resultList.add(t);
         }

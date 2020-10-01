@@ -1,8 +1,8 @@
 <cdtftSql namespace="user">
-    <select id="selectOne" parameterType="com.github.cdtft.daotest.pojo.User" resultType="com.github.cdtft.daotest.pojo.User">
+    <select id="findOne" parameterType="com.github.cdtft.daotest.pojo.User" resultType="com.github.cdtft.daotest.pojo.User">
         select * from user where id = #{id}
     </select>
-    <select id="selectAll" resultType="com.github.cdtft.daotest.pojo.User">
+    <select id="findAll" parameterType="com.github.cdtft.daotest.pojo.User" resultType="com.github.cdtft.daotest.pojo.User">
         select * from user
     </select>
 </cdtftSql>

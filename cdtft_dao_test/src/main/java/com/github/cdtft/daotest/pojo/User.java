@@ -1,12 +1,14 @@
 package com.github.cdtft.daotest.pojo;
 
+import java.util.StringJoiner;
+
 /**
  * @author : wangcheng
  * @date : 2020年09月28日 23:07
  */
 public class User {
 
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -14,11 +16,11 @@ public class User {
 
     private String gender;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,5 +46,15 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .add("age=" + age)
+                .add("gender='" + gender + "'")
+                .toString();
     }
 }

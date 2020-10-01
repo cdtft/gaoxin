@@ -35,7 +35,7 @@ public class XMLSqlBuilder {
     public Configuration parse(InputStream inputStream) throws DocumentException {
         Document document = new SAXReader().read(inputStream);
         Element rootElement = document.getRootElement();
-        String namespace = rootElement.attributeValue("namespaces");
+        String namespace = rootElement.attributeValue("namespace");
         List<Element> selectNodes = rootElement.selectNodes("//select");
         for (Element element : selectNodes) {
             CdtftSqlStatement cdtftSqlStatement = new CdtftSqlStatement();
@@ -44,7 +44,7 @@ public class XMLSqlBuilder {
             String resultType = element.attributeValue("resultType");
             cdtftSqlStatement.setId(id);
             cdtftSqlStatement.setParameterType(ClassLoadUtils.load(parameterType));
-            cdtftSqlStatement.setParameterType(ClassLoadUtils.load(resultType));
+            cdtftSqlStatement.setResultType(ClassLoadUtils.load(resultType));
             cdtftSqlStatement.setSql(element.getTextTrim());
             configuration.getSqlStatementMap().put(namespace + SEPARATOR + id, cdtftSqlStatement);
         }
