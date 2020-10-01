@@ -26,7 +26,7 @@ public class XMLSqlBuilder {
     }
 
     /**
-     * 解析select 语句
+     * xml convert to sqlstatment
      *
      * @param inputStream
      * @return
