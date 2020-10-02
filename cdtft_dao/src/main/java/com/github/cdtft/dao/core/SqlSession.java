@@ -8,10 +8,19 @@ import java.util.List;
  */
 public interface SqlSession {
 
-    public <E> List<E> findAll(String statementId, Object... param) throws Exception;
+    <E> List<E> findAll(String statementId, Object... param) throws Exception;
 
-    public <T> T findOne(String statementId, Object... param) throws Exception;
+    <T> T findOne(String statementId, Object... param) throws Exception;
 
-    public void close() throws Exception;
+    /**
+     * 生成动态代理对象
+     *
+     * @param mapperClass
+     * @param <M>
+     * @return
+     */
+    <M> M getMapper(Class<?> mapperClass);
+
+    void close() throws Exception;
 
 }

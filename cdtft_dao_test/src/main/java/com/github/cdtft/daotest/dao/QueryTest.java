@@ -19,14 +19,18 @@ public class QueryTest {
         try {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build("sqlConfig.xml");
             SqlSession sqlSession = sqlSessionFactory.openSqlSession();
-            try {
-                User user = new User();
-                user.setId(1L);
-                User findUser = sqlSession.findOne("user.findOne", user);
-                System.out.println(findUser);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            User user = new User();
+            user.setId(1L);
+//            try {
+//                User findUser = sqlSession.findOne("user.findOne", user);
+//                System.out.println(findUser);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+            //使用动态代理
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            User one = mapper.findOne(user);
+            System.out.println(one);
         } catch (FileNotFoundException | PropertyVetoException | DocumentException e) {
             e.printStackTrace();
         }

@@ -36,6 +36,7 @@ public class XMLSqlBuilder {
         Document document = new SAXReader().read(inputStream);
         Element rootElement = document.getRootElement();
         String namespace = rootElement.attributeValue("namespace");
+        configuration.getNamespaces().add(namespace);
         List<Element> selectNodes = rootElement.selectNodes("//select");
         for (Element element : selectNodes) {
             CdtftSqlStatement cdtftSqlStatement = new CdtftSqlStatement();
