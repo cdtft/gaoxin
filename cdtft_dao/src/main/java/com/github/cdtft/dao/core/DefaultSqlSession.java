@@ -3,12 +3,9 @@ package com.github.cdtft.dao.core;
 import com.github.cdtft.dao.executor.CdtftSqlExecutor;
 import com.github.cdtft.dao.executor.SimpleCdtftSqlExecutor;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.Type;
-import java.sql.Connection;
 import java.util.List;
 
 /**
