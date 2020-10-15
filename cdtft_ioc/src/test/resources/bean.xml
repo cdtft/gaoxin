@@ -1,0 +1,7 @@
+<beans>
+    <bean id="orderService" class="com.github.cdtft.ioc.bean.OrderService">
+        <property name="productService" ref="productService"></property>
+    </bean>
+    <bean id="productService" class="com.github.cdtft.ioc.bean.ProductService">
+    </bean>
+</beans>

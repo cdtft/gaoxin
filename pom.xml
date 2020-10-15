@@ -11,5 +11,7 @@
     <modules>
         <module>cdtft_dao_test</module>
         <module>cdtft_dao</module>
+        <module>cdtft_ioc</module>
+        <module>cdtft_learn_aop</module>
     </modules>
 </project>

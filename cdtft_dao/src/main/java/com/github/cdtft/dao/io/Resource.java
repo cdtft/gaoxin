@@ -1,6 +1,5 @@
 package com.github.cdtft.dao.io;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
