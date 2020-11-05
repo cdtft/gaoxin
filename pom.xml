@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>cdtft_dao_test</module>
-        <module>cdtft_dao</module>
-        <module>cdtft_ioc</module>
-        <module>cdtft_learn_aop</module>
+        <module>cdtft-dao-test</module>
+        <module>cdtft-dao</module>
+        <module>cdtft-ioc</module>
+        <module>cdtft-learn-aop</module>
+        <module>euripides-cat</module>
     </modules>
 </project>
